@@ -26,14 +26,27 @@ class MathUtilsTest {
 		mathUtils = new MathUtils();
 	}
 
-	@Test
-	@DisplayName("Add Method Test")
-	void testAdd() {
-		int expected = 2;
-		int actual = mathUtils.add(1, 1);
-		assertEquals(expected, actual);	
+	@Nested
+	class AddTest {
+		@Test
+		void testAddingTwoPositives() {
+			assertEquals(2, mathUtils.add(1, 1),
+					"Add method should return the sum of two numbers");
+		}
+
+		@Test
+		void testAddingTwoNegatives() {
+			assertEquals(-2, mathUtils.add(-1, -1),
+					"Add method should return the sum of two numbers");
+		}
+
+		@Test
+		void testAddingAPositiveAndANegative() {
+			assertEquals(0, mathUtils.add(-1, 1),
+					"Add method should return the sum of two numbers");
+		}
 	}
-	
+
 	@Test
 	@DisplayName("Divide Method Test")
 	void testDivide()
