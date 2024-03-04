@@ -2,12 +2,26 @@ package io.javabrains;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class MathUtilsTest {
 
 	private MathUtils mathUtils;
+
+	@BeforeAll
+	static void intiBeforeAll()
+	{
+		System.out.println("Running before all!");
+	}
+
+	@AfterEach
+	void initTearDownEach()
+	{
+		System.out.println("Cleaning up!");
+	}
 
 	@BeforeEach
 	void init()
