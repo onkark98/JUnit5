@@ -41,6 +41,15 @@ class MathUtilsTest {
 		}
 
 		@Test
+		void testMultiply() {
+			assertAll(
+					() -> assertEquals(0, mathUtils.multiply(1, 0)),
+					() -> assertEquals(1, mathUtils.multiply(1, 1)),
+					() -> assertEquals(6, mathUtils.multiply(2, 3))
+			);
+		}
+
+		@Test
 		void testAddingAPositiveAndANegative() {
 			assertEquals(0, mathUtils.add(-1, 1),
 					"Add method should return the sum of two numbers");
